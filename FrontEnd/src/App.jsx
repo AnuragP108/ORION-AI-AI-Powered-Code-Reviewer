@@ -10,9 +10,18 @@ function App() {
  const [code, setCode] = useState(`function sum(){
   return 1+1
   }`)
+
+  const [review, setReview] = useState(``)
   useEffect(()=>{
     prism.highlightAll()
 }, [])
+
+async function reviewCode(){
+ const response=await axios.post('http://localhost:3000/ai/get-review',{code})
+ setReview(response.data)
+
+}
+
   return (
     <>
     <main>
@@ -33,11 +42,14 @@ function App() {
               }}
             />
         </div>
-        <div className="review">Review</div>
+        <div
+        onClick={reviewCode}
+        className="review">Review</div>
       </div>
-      <div className="right">
+      <div className="right">{
+        review
         
-      </div>
+}</div>
     </main>
     </>
   )

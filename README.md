@@ -179,7 +179,7 @@ POST /ai/get-review
 * Responsive UI
 * One-click Review
 
-> **Tip:** Add screenshots of your application here for a more attractive GitHub repository.
+
 
 ---
 

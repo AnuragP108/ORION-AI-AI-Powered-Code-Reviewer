@@ -17,7 +17,7 @@ function App() {
 const [review, setReview] = useState(``)
 
   async function reviewCode(){
- const response = await axios.post('http://localhost:3000/ai/get-review', {code})
+ const response = await axios.post('https://orion-ai-ai-powered-code-reviewer.onrender.com//ai/get-review', {code})
   setReview(response.data)
 }
   return (
